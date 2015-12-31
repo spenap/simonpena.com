@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<section id="content" class="body">
+<h1>Yearly archives for {{ SITENAME }}</h1>
+
+<ul>
+{% for year, year_articles in dates|groupby('date.year')|sort(reverse=True) %}
+    <li><a href="{{ SITEURL }}/articles/{{ year }}">{{ year }}</a>({{ year_articles|count }})</li>
+{% endfor %}
+</ul>
+</section>
+{% endblock %}

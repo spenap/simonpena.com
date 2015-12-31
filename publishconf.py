@@ -10,8 +10,10 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-SITEURL = 'http://simonpena.com'
+SITEURL = 'http://simonpena.com/blog'
 RELATIVE_URLS = False
+
+MENUITEMS = (('Home', SITEURL + '/'), ('Archives', SITEURL + '/articles'), ('Categories', SITEURL + '/categories'), ('Tags', SITEURL + '/tags'))
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'

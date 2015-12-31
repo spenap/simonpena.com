@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<section id="content" class="body">
+<h1>Archives for {{ period | reverse | join(' ') }}</h1>
+
+{% if period.1 %}
+<dl>
+    {% for article in dates %}
+    <dt>{{ article.locale_date }}</dt>
+    <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+    {% endfor %}
+</dl>
+{% else %}
+<dl>
+{% for month, month_articles in dates|groupby('date.month')|sort %}
+    <dt><a href="{{ SITEURL }}/articles/{{ period.0 }}/{{ '%02d' % month }}">{{ month|month_name }}</a</dt>
+    {% for article in month_articles %}
+    <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+    {% endfor %}
+{% endfor %}
+</dl>
+{% endif %}
+</section>
+{% endblock %}
