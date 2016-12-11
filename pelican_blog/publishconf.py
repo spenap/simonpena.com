@@ -10,7 +10,7 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-SITEURL = 'http://simonpena.com/blog'
+SITEURL = '//simonpena.com/blog'
 RELATIVE_URLS = False
 
 MENUITEMS = (('Home', SITEURL + '/'), ('Archives', SITEURL + '/articles'), ('Categories', SITEURL + '/categories'), ('Tags', SITEURL + '/tags'))
